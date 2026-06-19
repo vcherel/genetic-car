@@ -1,0 +1,16 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.8.0
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+
+  - repo: local
+    hooks:
+      - id: tests
+        name: Run tests
+        entry: bash -c 'if find tests -name "test_*.py" -o -name "*_test.py" 2>/dev/null | grep -q .; then uv run pytest tests/; fi'
+        language: system
+        pass_filenames: false
+        stages: [pre-push]

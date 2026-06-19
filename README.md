@@ -12,24 +12,11 @@ Un **support visuel** (Supports.pdf / Supports.svg) accompagne la démonstration
 
 ## Guide d’installation
 
-Deux méthodes sont possibles : via Conda (recommandé) ou via pip.
+Prérequis : [uv](https://docs.astral.sh/uv/)
 
-### 1) Installation avec Conda
-
-Exécutez simplement les scripts fournis :
 ```bash
-bash install_env.sh   # Installe l’environnement et les dépendances
-bash start.sh         # Lance l’application
-```
-
-### 2) Installation avec pip
-
-Si vous préférez utiliser pip, assurez vous d'avoir Python 3.8.
-```bash
-python3 -m venv venv
-source venv/bin/activate
-pip install pygame==2.4.0 numpy==1.24.3 opencv-python==4.7.0.72 matplotlib==3.7.1
-python3 src/main.py
+uv sync          # Crée le venv et installe les dépendances
+uv run python src/main.py   # Lance l’application
 ```
 
 ## Fonctionnalités
@@ -172,8 +159,6 @@ faire le tour de chaque circuit se trouvent dans le dossier 'data/tests/all_cars
     - **other**: contient des fonctions diverses ainsi que les fichiers permettant de gérer la reconnaissance des dés
     - **main.py**: fichier principal de l'application
     - **analyze_data.py**: fichier permettant d'analyser les données de la simulation
-    - **install_env.sh**: script shell permettant d'installer l'environnement Conda
-    - **start.sh**: script shell permettant de lancer l'application
     - **Supports.pdf**: fichier de support à la démonstration
     - **Supports.svg**: fichier de support à la démonstration (format SVG)
 
